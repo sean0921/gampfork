@@ -6,7 +6,7 @@ OPTS    = -DTRACE -DENAGLO -DENAGAL -DENACMP -DENAQZS -DNFREQ=3
 #OPTS    = -DENAGLO -DENAQZS -DENAGAL -DENACMP -DNFREQ=2
 
 # for no lapack
-CC      = gcc
+CC      ?= gcc
 #CFLAGS  = -g -Wall -O3 -ansi -pedantic -Wno-unused-but-set-variable -I$(SRC) $(OPTS)
 #CFLAGS  = -g -Wall -O3 -DDEBUG -std=gnu89 -pedantic -I$(SRC) $(OPTS)
 CFLAGS  = -g -Wall -O3 -std=gnu89 -pedantic -I$(SRC) $(OPTS)
@@ -68,5 +68,5 @@ myRtkcmn.o    : $(SRC)/myRtkcmn.c
 	$(CC) -c $(CFLAGS) $(SRC)/myRtkcmn.c
 
 clean :
-	rm -f *.o
+	rm -f *.o gamp
 
